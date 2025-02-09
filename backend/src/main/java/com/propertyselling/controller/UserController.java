@@ -6,6 +6,8 @@ import com.propertyselling.dtos.*;
 import com.propertyselling.security.CustomUserDetails;
 import com.propertyselling.security.JwtUtils;
 import com.propertyselling.service.UserService;
+
+import io.swagger.v3.oas.models.responses.ApiResponse;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +87,55 @@ public class UserController {
 
         }
     // get user based on id
+    @GetMapping("/profile/{userId}")
+    public ResponseEntity<?> getUserProfile(@PathVariable Long userId) {
+        return ResponseEntity.ok(userService.getUserProfile(userId));
+    }
+
+    //get user based on email
+    @GetMapping("/profile/get-by-email")
+    public ResponseEntity<?> getUserByEmail(@RequestParam String email) {
+        return ResponseEntity.ok(userService.getUserByEmail(email));
+    }
+
+    @PutMapping("/aadhaar")
+    public ResponseEntity<?> addAadhaarCard(@RequestBody AadhaarRequestDTO dto) {
+        return ResponseEntity.ok(userService.addAadhaarCard(dto));
+    }
+
+    @PutMapping("/security-question")
+    public ResponseEntity<?> addSecurityQuestion(@RequestBody SecurityQuestionDTO dto) {
+        return ResponseEntity.ok(userService.addSecurityQuestion(dto));
+    }
+
+    @PutMapping("/address/{userId}")
+    public ResponseEntity<?> addOrUpdateAddress(@PathVariable Long userId, @RequestBody AddressDTO addressDTO) {
+        return ResponseEntity.ok(userService.addOrUpdateAddress(userId, addressDTO));
+    }
+
+    @PutMapping("/update/{userId}")
+    public ResponseEntity<?> updateUserProfile(@PathVariable Long userId, @RequestBody UserUpdateDTO dto) {
+        return ResponseEntity.ok(userService.updateUserProfile(userId, dto));
+    }
+
+    @PutMapping("/update/update-by-email")
+    public ResponseEntity<?> updateUserByEmail(@RequestParam String email, @RequestBody UserUpdateDTO dto) {
+        return ResponseEntity.ok(userService.updateUserByEmail(email, dto));
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<?> countUsersExcludingAdmins() {
+        return ResponseEntity.ok(userService.countUsersExcludingAdmins());
+    }
+
+    @GetMapping("/non-admin-users")
+    public ResponseEntity<?> getAllNonAdminUsers() {
+        return ResponseEntity.ok(userService.getAllNonAdminUsers());
+    }
+
+    @PutMapping("/status")
+    public ResponseEntity<?> updateUserStatus(@RequestBody UserStatusUpdateDTO dto) {
+        return ResponseEntity.ok(userService.updateUserStatus(dto));
+    }
 
 }
