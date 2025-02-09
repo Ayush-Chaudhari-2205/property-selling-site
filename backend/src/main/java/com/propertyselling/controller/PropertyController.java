@@ -107,4 +107,5 @@ public class    PropertyController {
 
         return ResponseEntity.ok(propertyService.filterProperties(type, minPrice, maxPrice, city, state, furnished));
     }
+
 }
