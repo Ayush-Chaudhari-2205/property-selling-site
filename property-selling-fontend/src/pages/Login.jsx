@@ -50,13 +50,18 @@ const Login = () => {
                 onChange={handleChange} 
                 required 
               />
+              <div className="mt-3">
+            <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+          </div>
             </div>
             <button className="btn btn-primary" type="submit">Log In</button>
           </form>
+          
         </div>
       </section>
     </main>
   );
 };
+
 
 export default Login;
