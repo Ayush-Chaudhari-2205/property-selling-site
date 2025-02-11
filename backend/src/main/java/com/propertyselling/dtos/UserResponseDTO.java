@@ -1,10 +1,5 @@
 package com.propertyselling.dtos;
 
-public class UserResponseDTO {
-    
-}
-package com.propertyselling.dtos;
-
 import com.propertyselling.Entity.AadhaarCard;
 import com.propertyselling.Entity.Address;
 import com.propertyselling.Entity.UserType;
