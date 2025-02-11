@@ -7,7 +7,7 @@ import com.propertyselling.security.CustomUserDetails;
 import com.propertyselling.security.JwtUtils;
 import com.propertyselling.service.UserService;
 
-import io.swagger.v3.oas.models.responses.ApiResponse;
+//import io.swagger.v3.oas.models.responses.ApiResponse;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

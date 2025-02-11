@@ -8,7 +8,7 @@ import Logout from "./pages/Logout";
 import RootLayout from "./Layout/RootLayout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import ContactUs from "./pages/ContactUs";
+//import ContactUs from "./pages/ContactUs";
 import DashboardLayout from "./Layout/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import AuthContext from "./context/AuthContext";
@@ -43,7 +43,7 @@ const App = () => {
       {/* Public Routes */}
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="/contact-us" element={<ContactUs />} />
+        {/* <Route path="/contact-us" element={<ContactUs />} /> */}
         <Route
           path="/login"
           element={user ? <Navigate to="/" replace /> : <Login />}

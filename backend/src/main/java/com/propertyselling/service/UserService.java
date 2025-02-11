@@ -3,8 +3,6 @@ package com.propertyselling.service;
 import com.propertyselling.Entity.User;
 import com.propertyselling.dtos.*;
 
-import io.swagger.v3.oas.models.responses.ApiResponse;
-
 import java.util.List;
 
 public interface UserService {
